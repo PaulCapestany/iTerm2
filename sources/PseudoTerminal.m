@@ -2835,10 +2835,7 @@ static NSString* TERMINAL_ARRANGEMENT_HIDING_TOOLBELT_SHOULD_RESIZE_WINDOW = @"H
     float charHeight = [[session textview] lineHeight];
 
     // Decide when to snap.  (We snap unless control, and only control, is held down.)
-    const NSUInteger theMask =
-        (NSControlKeyMask | NSAlternateKeyMask | NSCommandKeyMask | NSShiftKeyMask);
-    BOOL modifierDown =
-        (([[NSApp currentEvent] modifierFlags] & theMask) == NSControlKeyMask);
+    BOOL modifierDown = YES;
     BOOL snapWidth = !modifierDown;
     BOOL snapHeight = !modifierDown;
     if (sender != [self window]) {
